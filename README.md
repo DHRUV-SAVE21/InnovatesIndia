@@ -41,6 +41,50 @@ Annadata Saathi integrates multiple cutting-edge technologies into a single farm
 
 ---
 
+## 🏗️ System Architecture
+```mermaid
+graph TD
+    subgraph "Farmer Experience"
+        Farm[Farm] -->|Smartphone| PWA[Offline-First PWA]
+        Voice[Voice STT/TTS] --- PWA
+        SW[Service Worker & Cache] --- PWA
+    end
+
+    subgraph "Intelligence Layer"
+        PWA <--> NDVI[NDVI Analysis]
+        PWA <--> IAS[Irrigation Advisory]
+        PWA <--> CD[Crop Disease Results]
+        
+        NDVI --- S2[Sentinel-2 Satellite]
+        IAS --- Weather[Weather API]
+    end
+
+    subgraph "Core Backend"
+        SW -->|Sync| API[FastAPI]
+        BC[Blockchain - Immutable Log] --- API
+        NDVI --- BC
+        IAS --- API
+    end
+
+    subgraph "AI & ML Engine"
+        API <--> Agent[Agentic AI]
+        Agent --- ML[Scikit-learn ML]
+        Agent --- CV[Image Processing / CNN]
+        Agent --- LC[LangChain / LangGraph]
+        CV --> CD
+    end
+
+    subgraph "IoT & Data"
+        API --- DB[(Supabase / MongoDB)]
+        API --- SD[Sensor Data]
+        SD --- ESP[ESP32 IoT]
+        ESP --- Sensors[Soil/Temp Sensors]
+        ESP --- Relay[Relay / Irrigation]
+    end
+```
+
+---
+
 ## 🛠️ Technology Stack
 | Layer | Technologies |
 | :--- | :--- |
