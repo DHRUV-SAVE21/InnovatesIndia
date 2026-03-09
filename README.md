@@ -1,9 +1,6 @@
 # 🌾 Annadata Saathi (अन्नदाता साथी)
 ## *Empowering the Hands That Feed Us with AI & Remote Sensing*
 
-[![Hackathon](https://img.shields.io/badge/Event-India%20Innovates%202026-brightgreen)](https://unstop.com/conferences/india-innovates-2026-municipal-corporation-of-delhi-1625920)
-[![MCD & Ministry of Education](https://img.shields.io/badge/Supported%20By-MCD%20%26%20Ministry%20of%20Education%20Delhi-blue)](https://unstop.com/conferences/india-innovates-2026-municipal-corporation-of-delhi-1625920)
-
 ---
 
 ![Banner](./assets/banner.png)
@@ -58,22 +55,6 @@ Annadata Saathi integrates multiple cutting-edge technologies into a single farm
 
 ---
 
-## 🏗️ System Architecture
-```mermaid
-graph TD
-    A[Farmer Interface - PWA] -->|Offline Caching| B[Service Worker]
-    A -->|Voice/Input| C[AI Engine]
-    C -->|CNN| D[Disease Detection]
-    C -->|RL Engine| E[Irrigation & Fertilizer Advisor]
-    F[Sensing Layer] -->|IoT Sensors - ESP32| C
-    F -->|Satellite NDVI| C
-    G[Integration] -->|Govt Schemes| A
-    G -->|Mandi Marketplace| A
-    B -->|Sync when online| H[(Supabase Database)]
-```
-
----
-
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -105,11 +86,15 @@ graph TD
 
 ---
 
-## 🏆 India Innovates 2026
-This prototype is submitted to the **India Innovates 2026** Hackathon organized by the **Municipal Corporation of Delhi (MCD)** and **Delhi Ministry of Education**. Our mission aligns with the national goal of empowering the agricultural sector through digital transformation and indigenous innovation.
+## 👥 Meet the Team
+**College**: Veermata Jijabai Technological Institute (VJTI), Mumbai
 
-**Team Lead**: Dhruv 
-**Project**: Annadata Saathi - Smart Agri-Tech Ecosystem
+| Member | Focus |
+| :--- | :--- |
+| **Dhruv Save** | Team Lead |
+| **Megh Bari** | AI/ML & Computer Vision |
+| **Kavya Zala** | Frontend & UI/UX |
+| **Neelay Joshi** | Architecture & Integration |
 
 ---
 *Made with ❤️ for the Indian Farmer.*
