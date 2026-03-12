@@ -13,7 +13,7 @@
 ## 📌 Project Overview
 **Annadata Saathi** is an AI-powered, **offline-first** smart farming assistant prototype designed to support small and marginal farmers in low-connectivity rural environments. It bridges the digital divide by transforming complex agricultural data into actionable guidance, helping farmers improve productivity, sustainability, and transparency.
 
-Our platform heavily revolves around the **Frontend Progressive Web App (PWA)**, which ensures that critical agricultural intelligence is accessible even without a continuous internet connection. Built directly alongside the frontend, our robust **Node.js & Supabase Backend** gracefully synchronizes offline actions, handles authentication, and maintains data integrity.
+Our platform heavily revolves around the **Frontend Application**, which ensures that critical agricultural intelligence is accessible even without a continuous internet connection. Built directly alongside the frontend, our robust **Node.js & Supabase Backend** gracefully synchronizes offline actions, handles authentication, and maintains data integrity.
 
 ---
 
@@ -29,7 +29,7 @@ Small and marginal farmers face a "triple threat" of uncertainty:
 Annadata Saathi integrates multiple cutting-edge technologies with a seamless frontend focus supported by a robust backend.
 
 ### 📱 1. Offline-First Frontend (The Core Experience)
-- **Built with React & Vite**: A lightning-fast, progressive web application capable of storing data locally so farmers don't need a steady internet connection.
+- **Built with React & Vite**: A lightning-fast web application capable of storing data locally so farmers don't need a steady internet connection.
 - **Stunning UI/UX**: Utilizes **Tailwind CSS**, **Framer Motion**, and **GSAP** for highly interactive, fluid, and intuitive interfaces.
 - **Multilingual Support & Voice Access**: Reaches farmers across varying literacy levels using embedded text-to-speech and speech-to-text features.
 
@@ -61,20 +61,20 @@ Our frontend houses a multitude of functionally diverse components and pages des
 ## 🏗️ System Architecture
 ```mermaid
 graph TD
-    subgraph "Frontend Experience (PWA)"
-        Farm[Farm] -->|Smartphone| PWA[React + Vite PWA]
-        Voice[Voice STT/TTS] --- PWA
-        SW[Service Worker Cache] --- PWA
+    subgraph "Frontend Experience (App)"
+        Farm[Farm] -->|Smartphone| App[React + Vite App]
+        Voice[Voice STT/TTS] --- App
+        SW[Service Worker Cache] --- App
     end
 
     subgraph "Core Backend (Node.js)"
-        PWA -->|Sync| API[Express Server]
+        App -->|Sync| API[Express Server]
         API --- DB[(Supabase PostgreSQL)]
     end
 
     subgraph "Intelligence & AI"
-        PWA <--> Models[AI Vision Models]
-        PWA <--> Weather[Weather Info API]
+        App <--> Models[AI Vision Models]
+        App <--> Weather[Weather Info API]
     end
 ```
 
@@ -84,7 +84,7 @@ graph TD
 | Layer | Technologies |
 | :--- | :--- |
 | **Frontend UI** | React.js, Vite, Framer Motion, GSAP, Tailwind CSS |
-| **PWA & Offline** | Vite-PWA, Service Workers (Offline Caching) |
+| **Offline Support** | Service Workers (Offline Caching) |
 | **Backend API** | Node.js (Express), integrated in the frontend repository |
 | **Database & Auth** | PostgreSQL, Supabase, Face-API.js (Face Auth) |
 | **Others** | OpenWeatherMap API, LangChain |
