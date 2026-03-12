@@ -20,6 +20,7 @@ A powerful Web Application powered by AI, Machine Learning, Deep Reinforcement L
 
 - [About the Project](#-about-the-project)
 - [Stellar Features](#-stellar-features)
+- [Disruptive Hardware Economics](#-disruptive-hardware-economics)
 - [Technology Stack](#-technology-stack)
 - [Intelligent Architecture](#-intelligent-architecture)
 - [Getting Started](#-getting-started)
@@ -60,6 +61,21 @@ Whether it's using deep learning to recommend the perfect crop, computer vision 
 - **Facial Recognition Login**: Frictionless and highly secure authentication tailored for ease of use in the field without complex passwords.
 - **Blockchain Inventory**: Transparent, immutable tracking of supply chains to prevent fraud and ensure product trace-ability.
 - **Live Market Data**: Real-time Mandi (market) prices and localized weather/disaster news feeds.
+
+### 🏛️ 6. Government Admin Dashboard
+- **Real-Time Scheme Management**: A powerful, dedicated interface tailored specifically for government officials and administrators.
+- **Approval Workflows**: Admins can instantly approve, reject, or oversee farmer scheme applications directly from the dashboard, ensuring rapid and transparent distribution of subsidies to the farmers who need them.
+
+---
+
+## 💸 Disruptive Hardware Economics
+
+A core mission of Annadata Saathi is making cutting-edge precision agriculture completely accessible to the average Indian farmer. Current market alternatives for agricultural IoT setups typically cost upwards of **₹3,000+** ([Example Market Product](https://share.google/JVOmC8kNvnr8ryzx3)). 
+
+Our custom IoT architecture shatters this barrier:
+- **Field Data Node (Soil Moisture, Temperature, NPK Proxy)**: Engineered and deployed using ultra-low-cost microcontrollers and sensors for just **₹500**.
+- **Warehouse Protection Node (Fire & Gas Sensors)**: Complete safety telemetry built for only **₹500**.
+- **Scalable B2G Business Model**: The comprehensive hardware setup can be provided to farmers at a heavily subsidized price (up to **₹1,500** max), making it an extremely viable **Business-to-Government** solution for widespread rural distribution alongside the administrative dashboard.
 
 ---
 
