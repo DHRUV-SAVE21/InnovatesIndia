@@ -31,16 +31,17 @@ A powerful Web Application powered by AI, Machine Learning, Deep Reinforcement L
 
 ## 🌟 About the Project
 
-**Annadata Saathi** is designed to be a farmer's ultimate digital companion. By combining a highly responsive React frontend with a robust Python FastAPI backend, it delivers real-time intelligence directly to the hands of farmers. 
+**Annadata Saathi** is an end-to-end B2G and B2C agricultural intelligence platform designed to be a farmer's ultimate digital companion. By combining a highly responsive React frontend with a robust Python FastAPI backend, it delivers real-time intelligence directly to the hands of farmers while simultaneously offering the government unprecedented transparency and administration capabilities.
 
-Whether it's using deep learning to recommend the perfect crop, computer vision to diagnose a tractor engine, or IoT sensors to monitor warehouse safety, this platform bridges the gap between traditional agriculture and cutting-edge technology. Focusing heavily on the Indian farmer, our platform natively integrates localized intelligence and vernacular support to ensure maximum accessibility.
+This platform bridges the gap between traditional agriculture and cutting-edge technology by deploying **Retrieval-Augmented Generation (RAG)** and **Agentic AI Workflows**. Whether it's using deep learning to recommend the perfect crop, computer vision to diagnose a tractor engine, or an AI agent parsing complex government subsidy policies, Annadata Saathi ensures maximum accessibility natively localized for the Indian farmer.
 
 ---
 
 ## 🚀 Stellar Features
 
-### 👩🌾 1. AI-Powered Farmer Companion (Feature 4)
-- **Contextual AI Agent**: Personalized conversational AI that understands the farmer's unique profile, land size, and history.
+### 👩🌾 1. Agentic AI Farmer Companion (Feature 4)
+- **RAG-Based Agentic AI**: An autonomous conversational agent that utilizes **Retrieval-Augmented Generation (RAG)** to parse massive PDFs of complex government agricultural directives, immediately explaining eligibility to farmers in simple terms.
+- **Context-Aware Persona**: Remembers the farmer's unique profile, land size, and history to execute multi-step workflows automatically.
 - **Sarvam AI Integration (India AI)**: Utilizes Sarvam AI models for superior Indic language processing, ensuring farmers can interact with the app in their native language with robust fallbacks and high contextual accuracy.
 - **DRL Crop Recommendation**: Utilizes Deep Reinforcement Learning to analyze environmental variables and recommend the most profitable and sustainable crops.
 
@@ -62,9 +63,10 @@ Whether it's using deep learning to recommend the perfect crop, computer vision 
 - **Blockchain Inventory**: Transparent, immutable tracking of supply chains to prevent fraud and ensure product trace-ability.
 - **Live Market Data**: Real-time Mandi (market) prices and localized weather/disaster news feeds.
 
-### 🏛️ 6. Government Admin Dashboard
-- **Real-Time Scheme Management**: A powerful, dedicated interface tailored specifically for government officials and administrators.
-- **Approval Workflows**: Admins can instantly approve, reject, or oversee farmer scheme applications directly from the dashboard, ensuring rapid and transparent distribution of subsidies to the farmers who need them.
+### 🏛️ 6. Government Admin Access Panel (B2G Integration)
+- **Real-Time Scheme Management**: A powerful, dedicated command-center interface meticulously tailored for government officials and agricultural administrators.
+- **Agentic Verification Workflows**: Admins can instantly approve, reject, or oversee farmer scheme applications directly from the dashboard. The system flags fraudulent claims using our blockchain Ledger, ensuring 100% transparent and rapid distribution of subsidies directly to the farmers who actually need them.
+- **Macro-Level RAG Analytics**: Government officials can use the AI to query district-wide data (e.g., "Show me the most common crop diseases in Maharashtra this week") powered by our real-time IoT and Computer Vision ingestion engines.
 
 ---
 
