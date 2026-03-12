@@ -41,6 +41,20 @@ Annadata Saathi integrates multiple cutting-edge technologies with a seamless fr
 ### 🌾 3. AI & Remote Sensing Integrations
 - **Intelligent Recommendations**: Connects to weather APIs and AI models to provide precise irrigation and fertilizer counseling.
 - **Disease & Health Monitoring**: Processes leaf imagery and remote sensing data to determine plant health anomalies.
+### 🚀 4. 10+ Integrated Smart Features
+Our frontend houses a multitude of functionally diverse components and pages designed to cover every aspect of the agricultural lifecycle:
+
+1.  **AI Crop Health & Disease Detection** (`CropHealth`, `DecisionIntelligence.jsx` components): Upload leaf images to our Computer Vision model to instantly identify diseases and get treatment recommendations.
+2.  **IoT Sensor Dashboard** (`FarmerDashboard`, `ModernFarmerDashboard` JSX pages): Real-time field telemetry for Soil Moisture, Temperature, and NPK levels integrating Multi-Signal IoT Cores. Includes live Air/Gas monitoring and Fire detection.
+3.  **Smart Irrigation Controls**: Automated watering recommendations based on real-time soil data and predictive weather models.
+4.  **Farm Vault / Smart Inventory** (`FarmerInventory.jsx`): Manage harvested agricultural assets securely using Blockchain-backed Digital Passports with unique Scannable QR Codes.
+5.  **Market Intelligence & Direct Marketplace** (`ModernMarketplace.jsx`): Direct-from-farm marketplace connecting farmers to buyers with live mandi prices and yield tracking.
+6.  **Government Schemes & AI Assistant** (`SchemesPage`, `SchemesAgent.jsx`): An intelligent conversational agent ("Kisan Sahayak") that helps farmers find, understand, and apply for relevant government subsidies.
+7.  **Equipment Analyzer** (`EquipmentAnalyzer.jsx`): Machine vision to assess farm equipment (like tractors), track maintenance schedules, suggest repairs, and locate nearby mechanic shops.
+8.  **Blockchain Supply Chain Tracking** (`ProductTransparency.jsx`): End-to-end event traceability (logging SENSOR_READING and IRRIGATION events) for buyers, guaranteeing product origin.
+9.  **Hyperlocal Weather & Disaster Alerts**: Micro-climate tracking and localized weather integrations to plan optimal harvest windows.
+10. **Crop Recommendation & Yield Prediction**: AI-powered advisory to determine the most profitable crops to plant based on soil composition parameters.
+11. **Face Authentication** (`FaceAuth.jsx`): Secure and simple biometric login using Face-API.js, eliminating password struggles for less digitally literate users.
 
 ---
 
