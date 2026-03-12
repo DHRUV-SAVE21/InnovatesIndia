@@ -5,81 +5,62 @@
 
 ![Banner](./assets/banner.png)
 
-## 📌 Project Overview
-**Annadata Saathi** is an AI-powered, **offline-first** smart farming assistant prototype designed to support small and marginal farmers in low-connectivity rural environments. It bridges the digital divide by transforming complex satellite data and environmental insights into actionable guidance, helping farmers improve productivity, sustainability, and transparency.
+## 📌 Project Resources
+- **📁 [Project Drive Link (Assets & Info)](https://drive.google.com/drive/folders/1621AS4paJHEzM6xfE4wstdHwvK2Dqyc0?usp=drive_link)**
 
-Developed as a **Progressive Web App (PWA)**, the platform ensures that critical agricultural intelligence is accessible even without a continuous internet connection, using multilingual voice interaction to reach farmers across all literacy levels.
+---
+
+## 📌 Project Overview
+**Annadata Saathi** is an AI-powered, **offline-first** smart farming assistant prototype designed to support small and marginal farmers in low-connectivity rural environments. It bridges the digital divide by transforming complex agricultural data into actionable guidance, helping farmers improve productivity, sustainability, and transparency.
+
+Our platform heavily revolves around the **Frontend Progressive Web App (PWA)**, which ensures that critical agricultural intelligence is accessible even without a continuous internet connection. Built directly alongside the frontend, our robust **Node.js & Supabase Backend** gracefully synchronizes offline actions, handles authentication, and maintains data integrity.
 
 ---
 
 ## 🛑 The Challenge
 Small and marginal farmers face a "triple threat" of uncertainty:
-1.  **Environmental Vulnerability**: Unpredictable weather and inefficient resource usage.
-2.  **Information Inaccessibility**: Delayed detection of crop diseases and lack of real-time market/mandi prices.
-3.  **Digital Divide**: Limited internet connectivity in rural areas and complex interfaces for government schemes.
+1. **Environmental Vulnerability**: Unpredictable weather and inefficient resource usage.
+2. **Information Inaccessibility**: Delayed detection of crop diseases and lack of real-time market/mandi prices.
+3. **Digital Divide**: Limited internet connectivity in rural areas and complex interfaces for government schemes.
 
 ---
 
-## 💡 Our Solution: The AI-Driven Ecosystem
-Annadata Saathi integrates multiple cutting-edge technologies into a single farmer-centric interface:
+## 💡 Our Solution: A Frontend-Driven Ecosystem
+Annadata Saathi integrates multiple cutting-edge technologies with a seamless frontend focus supported by a robust backend.
 
-### 🛰️ 1. Remote Sensing (NDVI Monitoring)
-- **Early stressed detection**: Uses satellite-based Normalized Difference Vegetation Index (NDVI) to identify crop health issues before they become visible to the naked eye.
-- **Cost-Effective**: No drones or expensive hardware required; relies on open satellite data.
+### 📱 1. Offline-First Frontend (The Core Experience)
+- **Built with React & Vite**: A lightning-fast, progressive web application capable of storing data locally so farmers don't need a steady internet connection.
+- **Stunning UI/UX**: Utilizes **Tailwind CSS**, **Framer Motion**, and **GSAP** for highly interactive, fluid, and intuitive interfaces.
+- **Multilingual Support & Voice Access**: Reaches farmers across varying literacy levels using embedded text-to-speech and speech-to-text features.
 
-### 🤖 2. Precision Advisory with RL
-- **Intelligent Recommendations**: A reinforcement learning-inspired engine that optimizes irrigation and fertilizer usage based on soil sensors (pH, NPK, Moisture) and local weather forecasts.
-- **Sustainability**: Reduces resource wastage and lowers environmental impact.
+### ⚙️ 2. Node.js & Supabase Backend (Intelligence & Sync)
+- **Seamless Integration**: A lightweight Node.js Express server runs alongside the frontend to handle critical operations securely.
+- **Data Synchronization**: Synchronizes cached offline data with **Supabase**, establishing a reliable architecture for saving user profiles, farming histories, and scheme progress.
+- **Face Authentication**: Secure biometric authentication directly managed via the unified application structure.
 
-### 🍃 3. Computer Vision (Disease Detection)
-- **Instant Diagnosis**: A lightweight CNN-based vision module that identifies crop diseases from simple smartphone leaf images.
-- **Actionable Treatment**: Providing immediate steps to mitigate crop loss.
-
-### 🏛️ 4. Government & Market Integration
-- **Scheme Navigator**: AI-guided discovery of relevant agricultural schemes, eligibility checking, and digital record maintenance.
-- **Transparent Marketplace**: Direct access to mandi prices and a supply-chain transparency module for better profit margins.
+### 🌾 3. AI & Remote Sensing Integrations
+- **Intelligent Recommendations**: Connects to weather APIs and AI models to provide precise irrigation and fertilizer counseling.
+- **Disease & Health Monitoring**: Processes leaf imagery and remote sensing data to determine plant health anomalies.
 
 ---
 
 ## 🏗️ System Architecture
 ```mermaid
 graph TD
-    subgraph "Farmer Experience"
-        Farm[Farm] -->|Smartphone| PWA[Offline-First PWA]
+    subgraph "Frontend Experience (PWA)"
+        Farm[Farm] -->|Smartphone| PWA[React + Vite PWA]
         Voice[Voice STT/TTS] --- PWA
-        SW[Service Worker & Cache] --- PWA
+        SW[Service Worker Cache] --- PWA
     end
 
-    subgraph "Intelligence Layer"
-        PWA <--> NDVI[NDVI Analysis]
-        PWA <--> IAS[Irrigation Advisory]
-        PWA <--> CD[Crop Disease Results]
-        
-        NDVI --- S2[Sentinel-2 Satellite]
-        IAS --- Weather[Weather API]
+    subgraph "Core Backend (Node.js)"
+        PWA -->|Sync| API[Express Server]
+        API --- DB[(Supabase PostgreSQL)]
     end
 
-    subgraph "Core Backend"
-        SW -->|Sync| API[FastAPI]
-        BC[Blockchain - Immutable Log] --- API
-        NDVI --- BC
-        IAS --- API
-    end
-
-    subgraph "AI & ML Engine"
-        API <--> Agent[Agentic AI]
-        Agent --- ML[Scikit-learn ML]
-        Agent --- CV[Image Processing / CNN]
-        Agent --- LC[LangChain / LangGraph]
-        CV --> CD
-    end
-
-    subgraph "IoT & Data"
-        API --- DB[(Supabase / MongoDB)]
-        API --- SD[Sensor Data]
-        SD --- ESP[ESP32 IoT]
-        ESP --- Sensors[Soil/Temp Sensors]
-        ESP --- Relay[Relay / Irrigation]
+    subgraph "Intelligence & AI"
+        PWA <--> Models[AI Vision Models]
+        PWA <--> Weather[Weather Info API]
     end
 ```
 
@@ -88,14 +69,11 @@ graph TD
 ## 🛠️ Technology Stack
 | Layer | Technologies |
 | :--- | :--- |
-| **Frontend UI** | React.js, Next.js, Framer Motion, GSAP, Tailwind CSS |
+| **Frontend UI** | React.js, Vite, Framer Motion, GSAP, Tailwind CSS |
 | **PWA & Offline** | Vite-PWA, Service Workers (Offline Caching) |
-| **Backend API** | FastAPI (Python), Node.js (Express) |
-| **AI / ML** | TensorFlow, PyTorch, Scikit-learn, Computer Vision (CNN) |
-| **Remote Sensing** | Satellite NDVI APIs, OpenWeatherMap API |
+| **Backend API** | Node.js (Express), integrated in the frontend repository |
 | **Database & Auth** | PostgreSQL, Supabase, Face-API.js (Face Auth) |
-| **IoT Connectivity** | ESP32 (Real-time soil sensor integration demo) |
-| **Voice Interface** | Multilingual Speech-to-Text & Text-to-Speech |
+| **Others** | OpenWeatherMap API, LangChain |
 
 ---
 
@@ -103,7 +81,7 @@ graph TD
 
 ### Prerequisites
 - Node.js (v18+)
-- Python 3.10+ (for backend/AI modules)
+- Postgres/Supabase configured (check `.env`)
 - Git
 
 ### Installation
@@ -113,20 +91,22 @@ graph TD
    cd InnovatesIndia
    ```
 
-2. **Frontend Setup**
+2. **Frontend Setup & Start**
+   The React frontend and Node.js server reside inside the `frontend` folder.
    ```bash
    cd frontend
    npm install
    npm run dev
    ```
-   *Visit `http://localhost:5173` locally.*
+   *Visit `http://localhost:5173` locally to see the app.*
 
-3. **Backend Setup** (Optional for full functionality)
+3. **Backend Server Setup**
+   To start the Node.js Express server for data operations:
    ```bash
-   cd backend
-   pip install -r requirements.txt
-   python main.py
+   cd frontend
+   node server.js
    ```
+   *The server runs on port 5000 by default.*
 
 ---
 
