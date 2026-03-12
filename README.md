@@ -1,5 +1,5 @@
-# 🌾 Annadata Saathi (अन्नदाता साथी)
-## *Empowering the Hands That Feed Us with AI & Remote Sensing*
+# 🌾 Annadata Saathi (Let Go 3.0)
+## *Multi-Agent Precision Agriculture System Leveraging AI, DRL & IoT*
 
 ---
 
@@ -11,9 +11,9 @@
 ---
 
 ## 📌 Project Overview
-**Annadata Saathi** is an AI-powered, **offline-first** smart farming assistant prototype designed to support small and marginal farmers in low-connectivity rural environments. It bridges the digital divide by transforming complex agricultural data into actionable guidance, helping farmers improve productivity, sustainability, and transparency.
+**Annadata Saathi (Let Go 3.0)** is an advanced, **Multi-Agent Precision Agriculture System** designed to support small and marginal farmers. It bridges the digital divide by transforming complex agricultural data into actionable guidance, helping farmers improve productivity, sustainability, and transparency.
 
-Our platform heavily revolves around the **Frontend Application**, which ensures that critical agricultural intelligence is accessible even without a continuous internet connection. Built directly alongside the frontend, our robust **Node.js & Supabase Backend** gracefully synchronizes offline actions, handles authentication, and maintains data integrity.
+The platform orchestrates a **React Frontend Application** offering real-time intelligence natively and a high-performance **Python FastAPI Backend** that operates complex heavy machine learning models, deep reinforcement learning (DRL) logic, and background IoT sensor polling.
 
 ---
 
@@ -25,75 +25,81 @@ Small and marginal farmers face a "triple threat" of uncertainty:
 
 ---
 
-## 💡 Our Solution: A Frontend-Driven Ecosystem
-Annadata Saathi integrates multiple cutting-edge technologies with a seamless frontend focus supported by a robust backend.
+## 💡 Our Solution: End-to-End Precision Agriculture Ecosystem
 
-### 📱 1. Offline-First Frontend (The Core Experience)
-- **Built with React & Vite**: A lightning-fast web application capable of storing data locally so farmers don't need a steady internet connection.
-- **Stunning UI/UX**: Utilizes **Tailwind CSS**, **Framer Motion**, and **GSAP** for highly interactive, fluid, and intuitive interfaces.
-- **Multilingual Support & Voice Access**: Reaches farmers across varying literacy levels using embedded text-to-speech and speech-to-text features.
+### 📱 1. Frontend Experience (React Application)
+- **Built with React & Vite**: A lightning-fast web application designed for high interactivity. It transmits user states, JWT tokens, array datasets, and base64 imagery directly to the core backend.
+- **Stunning UI/UX**: Utilizes **Tailwind CSS**, **Framer Motion**, and **GSAP** for fluid interfaces. It dynamically renders charts, weather cards, soil health statistics, and complex 3D farm zones.
+- **Multilingual Support & Voice Access**: Reaches farmers across varying literacy levels using embedded text-to-speech technologies.
 
-### ⚙️ 2. Node.js & Supabase Backend (Intelligence & Sync)
-- **Seamless Integration**: A lightweight Node.js Express server runs alongside the frontend to handle critical operations securely.
-- **Data Synchronization**: Synchronizes cached offline data with **Supabase**, establishing a reliable architecture for saving user profiles, farming histories, and scheme progress.
-- **Face Authentication**: Secure biometric authentication directly managed via the unified application structure.
+### ⚙️ 2. Core Backend (Python FastAPI & Supabase)
+- **FastAPI Core (`main.py`)**: A highly modularized architecture routing requests to distinct feature folders.
+- **Asynchronous Model Loading**: Prevents server worker timeouts on first requests by loading massive TensorFlow machine learning models asynchronously upon server startup via background threads (`@app.on_event("startup")`).
+- **Data Isolation & Security**: Powered by **Supabase (PostgreSQL)** implementing Row Level Security (RLS) to enforce strict user data isolation based strictly on `user_id`.
+- **Background Sensor Polling**: Continuously pulls hardware metrics (Fire/Gas) without blocking the main event loop.
 
-### 🌾 3. AI & Remote Sensing Integrations
-- **Intelligent Recommendations**: Connects to weather APIs and AI models to provide precise irrigation and fertilizer counseling.
-- **Disease & Health Monitoring**: Processes leaf imagery and remote sensing data to determine plant health anomalies.
-### 🚀 4. 10+ Integrated Smart Features
-Our frontend houses a multitude of functionally diverse components and pages designed to cover every aspect of the agricultural lifecycle:
+---
 
-1.  **AI Crop Health & Disease Detection** (`CropHealth`, `DecisionIntelligence.jsx` components): Upload leaf images to our Computer Vision model to instantly identify diseases and get treatment recommendations.
-2.  **IoT Sensor Dashboard** (`FarmerDashboard`, `ModernFarmerDashboard` JSX pages): Real-time field telemetry for Soil Moisture, Temperature, and NPK levels integrating Multi-Signal IoT Cores. Includes live Air/Gas monitoring and Fire detection.
-3.  **Smart Irrigation Controls**: Automated watering recommendations based on real-time soil data and predictive weather models.
-4.  **Farm Vault / Smart Inventory** (`FarmerInventory.jsx`): Manage harvested agricultural assets securely using Blockchain-backed Digital Passports with unique Scannable QR Codes.
-5.  **Market Intelligence & Direct Marketplace** (`ModernMarketplace.jsx`): Direct-from-farm marketplace connecting farmers to buyers with live mandi prices and yield tracking.
-6.  **Government Schemes & AI Assistant** (`SchemesPage`, `SchemesAgent.jsx`): An intelligent conversational agent ("Kisan Sahayak") that helps farmers find, understand, and apply for relevant government subsidies.
-7.  **Equipment Analyzer** (`EquipmentAnalyzer.jsx`): Machine vision to assess farm equipment (like tractors), track maintenance schedules, suggest repairs, and locate nearby mechanic shops.
-8.  **Blockchain Supply Chain Tracking** (`ProductTransparency.jsx`): End-to-end event traceability (logging SENSOR_READING and IRRIGATION events) for buyers, guaranteeing product origin.
-9.  **Hyperlocal Weather & Disaster Alerts**: Micro-climate tracking and localized weather integrations to plan optimal harvest windows.
-10. **Crop Recommendation & Yield Prediction**: AI-powered advisory to determine the most profitable crops to plant based on soil composition parameters.
-11. **Face Authentication** (`FaceAuth.jsx`): Secure and simple biometric login using Face-API.js, eliminating password struggles for less digitally literate users.
+## 🚀 10+ Integrated Smart Features & Backend Mapping
+Our repository is strictly modularized into distinct "features", combining robust backend logic with interactive frontend JSX components effortlessly:
+
+1. **Deep Reinforcement Learning (DRL) Recommendations (`feature4_drl`)**: Powers the core crop recommendation engine. It makes dynamic decisions on optimal crop placement based on strict environmental parameters utilizing robust pure DRL algorithms.
+2. **AI Crop Health & Disease Prediction (`feature2`, `DecisionIntelligence.jsx`)**: Instant crop disease prediction. The backend evaluates leaf damage entirely on-device via asynchronously loaded TensorFlow models and returns localized treatment remedies over FastAPI.
+3. **Smart Equipment Analyzer (`feature5`, `EquipmentAnalyzer.jsx`)**: An orchestration engine that utilizes computer vision on uploaded equipment images to calculate type, age, health score (0-100), and repair estimates. It auto-generates a 6-month maintenance schedule, suggests repair kits from the marketplace, and calculates available agricultural subsidies securely.
+4. **IoT Warehouse & Field Safety (`feature7 & hardware`, `ModernFarmerDashboard.jsx`)**: Hardware IoT service running an infinite loop (`start_fire_gas_polling`) checking for spikes in Fire/Gas sensor data every 5 seconds. Pushes real-time metrics back to the frontend dashboards alongside NPK and soil moisture telemetry.
+5. **Blockchain Farm Vault (`feature6`, `FarmerInventory.jsx`)**: Manages harvested agricultural assets securely. Handles all logic for blockchain transactions related to inventory tracking to prevent supply chain fraud, creating verifiable Digital Passports with unique Scannable QR Codes.
+6. **Intelligent Farmer Agent (`feature4`, `SchemesAgent.jsx`)**: "Kisan Sahayak", an AI persona that tracks farmer profiles, provides contextual conversational assistance, and helps users seamlessly understand and apply for government subsidies.
+7. **Market Intelligence & Direct Marketplace (`mandi`, `ModernMarketplace.jsx`)**: Fetches massive external datasets to deliver real-time mandi prices across different regions combined with a direct-from-farm marketplace.
+8. **Disaster Alerts & Agricultural News (`feature_news`)**: Filters the internet for hyper-local agricultural updates, disaster warnings, and specific farming tips natively embedded in UI modules.
+9. **Dual Authentication System (`auth` & `face_auth`, `FaceAuth.jsx`)**: A hybrid system merging standard JWT-based login with localized, extremely secure **Facial Recognition**. Eliminates complex password struggles for less digitally literate users.
+10. **Smart Irrigation Controls**: Automated watering recommendations based on real-time soil data and predictive weather APIs.
+11. **Supply Chain Traceability (`ProductTransparency.jsx`)**: End-to-end event traceability logging actions like `SENSOR_READING` and `IRRIGATION` events to entirely guarantee product origin records.
 
 ---
 
 ## 🏗️ System Architecture
+
 ```mermaid
 graph TD
-    subgraph "Frontend Experience (App)"
-        Farm[Farm] -->|Smartphone| App[React + Vite App]
+    subgraph "Frontend Experience (React App)"
+        Farm[Farm / User] -->|Smartphone| App[React + Vite App]
         Voice[Voice STT/TTS] --- App
-        SW[Service Worker Cache] --- App
+        DynamicUI[Charts & 3D Zones] --- App
     end
 
-    subgraph "Core Backend (Node.js)"
-        App -->|Sync| API[Express Server]
-        API --- DB[(Supabase PostgreSQL)]
+    subgraph "Core Backend (Python FastAPI)"
+        App -->|Auth, Base64, JWT| API[main.py Router]
+        API -->|Async Load| TF[TensorFlow Models]
+        API -->|Background Thread| IoT[Hardware Polling loop 5s]
+        API -->|DRL Engine| Models[Deep Reinforcement Learning]
+        API <--> DB[(Supabase PostgreSQL RLS)]
     end
 
-    subgraph "Intelligence & AI"
-        App <--> Models[AI Vision Models]
-        App <--> Weather[Weather Info API]
+    subgraph "External Integrations"
+        API <--> Weather[Weather & Mandi APIs]
+        API <--> Blockchain[Blockchain Ledger / Ledger Nodes]
     end
 ```
 
 ---
 
 ## 🛠️ Technology Stack
+
 | Layer | Technologies |
 | :--- | :--- |
 | **Frontend UI** | React.js, Vite, Framer Motion, GSAP, Tailwind CSS |
-| **Offline Support** | Service Workers (Offline Caching) |
-| **Backend API** | Node.js (Express), integrated in the frontend repository |
-| **Database & Auth** | PostgreSQL, Supabase, Face-API.js (Face Auth) |
-| **Others** | OpenWeatherMap API, LangChain |
+| **Backend Framework** | Python FastAPI (`main.py`), Modular Feature Routing |
+| **AI / Machine Learning** | TensorFlow (Async Loading), Deep Reinforcement Learning (DRL) |
+| **Hardware / IoT** | Custom continuous infinite polling scripts (Fire, Gas, NPK, Moisture) |
+| **Database & Security** | PostgreSQL, Supabase (RLS user_id isolation), FaceAuth algorithms |
+| **External APIs** | OpenWeatherMap, Mandi APIs, News Parsers, Blockchain Networks |
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
+- Python (v3.9+)
 - Node.js (v18+)
 - Postgres/Supabase configured (check `.env`)
 - Git
@@ -101,26 +107,26 @@ graph TD
 ### Installation
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/DHRUV-SAVE21/InnovatesIndia.git
-   cd InnovatesIndia
+   git clone https://github.com/DHRUV-SAVE21/Let_Go_3.0.git
+   cd Let_Go_3.0
    ```
 
-2. **Frontend Setup & Start**
-   The React frontend and Node.js server reside inside the `frontend` folder.
+2. **Backend Setup (FastAPI)**
+   ```bash
+   cd backend
+   pip install -r requirements.txt
+   uvicorn main:app --reload
+   ```
+   *The background threads (TensorFlow loading & IoT polling) will automatically spin up rapidly on startup.*
+
+3. **Frontend Setup & Start (React App)**
+   In a separate terminal:
    ```bash
    cd frontend
    npm install
    npm run dev
    ```
-   *Visit `http://localhost:5173` locally to see the app.*
-
-3. **Backend Server Setup**
-   To start the Node.js Express server for data operations:
-   ```bash
-   cd frontend
-   node server.js
-   ```
-   *The server runs on port 5000 by default.*
+   *Visit `http://localhost:5173` to see the extremely robust application in action.*
 
 ---
 
